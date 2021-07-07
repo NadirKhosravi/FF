@@ -1,0 +1,242 @@
+using System;
+using ConsoleApp21;
+
+namespace ConsoleApp211
+{
+    class Program
+    {
+        static void Main(string[] args)        
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            bool finished = false;
+            do
+            {
+                Console.Write("ƏSAS MENU\n 1)Sahənin hesablanmasi\n 2)Ətraf mühitin hesablanması \n 3)Çıxış \n");
+                int a;
+                a = Convert.ToInt32(Console.ReadLine());
+                        
+                if (a == 1)
+                {
+                    Console.WriteLine("1)Kvadrat\n 2)Dörducaqlı\n 3)Üçbucaqlı\n 4)Dairə\n 5)Əsas Menu\n ");
+                    int x;
+                    x = Convert.ToInt32(Console.ReadLine());
+                    
+                    if (x == 1)
+                    {
+                        Console.WriteLine("Kvadratın Tərəfini girin:");
+                        int teref;
+                        teref = Convert.ToInt32(Console.ReadLine());
+                        if (teref > 0)
+                        {
+                            Console.WriteLine("Girilən ədədlərə görə kvadratın sahəsi:" + teref * teref);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Düzgün ədəd daxil edin!");
+                        }
+                    }
+                    else if (x == 2)
+                    {
+                        Console.WriteLine("Dördbucaqlının tərəflərini girin:");
+                        int terefd1;
+                        int terefd2;
+                        terefd1 = Convert.ToInt32(Console.ReadLine());
+
+                        if (terefd1 > 0)
+                        {
+                            Console.WriteLine("İkinci ədədi daxil edin");
+                            terefd2 = Convert.ToInt32(Console.ReadLine());
+                            if(terefd2>0)
+                            {
+                                Console.WriteLine("Girilən ədədlərə görə dördbucaqlının sahəsi:" + terefd1 * terefd2);
+                          
+                            }
+                            else
+                            {
+                                Console.WriteLine("Düzgün ədəd daxil edin!");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Düzgün ədəd daxil edin!");
+                        }                                                                
+                    }
+                    else if (x == 3)
+                    {
+                        Console.WriteLine("Üçbucaqlının tərəflərini girin");
+                        
+                        int side1;
+                        int side2;
+                        int side3;
+                        int halfperim;
+                        side1 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Ikinci tərəfi daxil edin:");
+                        side2 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Üçüncü tərəfi daxil edin:");
+                        side3 = Convert.ToInt32(Console.ReadLine());
+                        halfperim = (side1 + side2 + side3) / 2;
+                        double sahe = Math.Sqrt(halfperim * (halfperim - side1) * (halfperim - side2) * (halfperim - side3));
+                        if (side1 > 0 && side2 > 0 && side3 > 0)
+                        {
+                            Console.WriteLine("Girilən ədədlərə görə üçbucaqlının sahəsi:\n " + sahe);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Düzgün ədəd daxil edin!");
+                        }
+                    }
+                    else if (x == 4)
+                    {
+                        Console.WriteLine("Dairənin sahəsini tapılması üçün radiusu girin:");
+                        int radius;
+                        radius = Convert.ToInt32(Console.ReadLine());
+                        double PI = 3.1415926535897931;
+                        if (radius > 0)
+                        {
+                            Console.WriteLine("Dairənin sahəsi:" + radius * radius * PI);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Düzgün ədəd daxil edin!");
+                        }
+                    }
+                    else if (x == 5)
+                    {
+                        Console.WriteLine("Əsas menuya qayıtmaq istədiyinizdən əmin misiniz? [H/Y]");
+                        var t = char.Parse(Console.ReadLine());
+                        if (t == 'H')
+                        {
+                            finished = false;
+
+                        }
+                        else
+                        {
+                            finished = true;
+                        }
+                    } 
+                    else if (x>5)
+                    {
+                        Console.WriteLine("Düzgün ədəd daxil edin!");
+                    }
+                  
+                }
+                else if (a == 2)
+                {
+                    Console.WriteLine("1)Kvadrat\n 2)Dörducaqlı\n 3)Üçbucaqlı\n 4)Dairə\n 5)Əsas Menu\n ");
+                    int p;
+                    p = int.Parse(Console.ReadLine());
+                    if(p==1)
+                    {
+                        Console.WriteLine("Kvadratın Perimetrini tapmaq üçün tərəfini daxil edin:");
+                        double d = Double.Parse(Console.ReadLine());
+                        double total1;
+                        total1 = d * 4;
+                        if (d > 0) 
+                        {
+                            Console.WriteLine("Kvadratın tərəfi:" + total1);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Düzgün ədəd daxil edin!");
+                        }
+                      
+                    }
+               
+                    else if(p==2)
+                    {
+                        
+                        Console.WriteLine("Dördbucaqlının perimetrini tapmaq üçün tərəflərini daxil edin:");
+                        double y = Double.Parse(Console.ReadLine());
+                        if (y>0)
+                        {
+                            Console.WriteLine("Ikinci tərəfi daxil edin:");
+                            double m = Double.Parse(Console.ReadLine());
+                            double total2;
+                            total2 = (m + y) * 2;
+                            Console.WriteLine("Dördbucaqlının Perimetri:" + total2);
+                        }
+                        else 
+                        {
+                            Console.WriteLine("Düzgün ədəd daxil edin");
+                        }
+                    }
+                    else if (p==3)
+                    {
+                        Console.WriteLine("Üçbucağın perimetrini tapmaq üçün tərəflərini daxil edin:");                       
+                        double k1 = Double.Parse(Console.ReadLine());
+                        Console.WriteLine("İkini tərəfi daxil edin");
+                        double k2 = Double.Parse(Console.ReadLine());
+                        Console.WriteLine("Üçüncü tərəfi daxil edin");
+                        double k3 = Double.Parse(Console.ReadLine());
+                        double totalx = k1 + k2 + k3;
+                        if(k1>0 && k2>0 && k3>0)
+                        {
+                            Console.WriteLine("Üçbucağın perimetri:" + totalx);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Düzgün ədəd daxil edin!");
+                        }
+
+                    }
+                    else if(p==4)
+                    {
+                        Console.WriteLine("Dairənin uzunluğunu tapmaq üçün radiusu daxil edin:");
+                        double r1 = Double.Parse(Console.ReadLine());
+                        double PI = 3.1415926535897931;
+                        double totalperm = r1 * 2 * PI;
+                        if(r1>0)
+                        {
+                            Console.WriteLine("Dairənin perimetri:" + totalperm);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Düzgün ədəd daxil edin!");
+                        }
+                        
+
+                    }
+                    else if (p == 5)
+                    {
+                        Console.WriteLine("Əsas menuya qayıtmaq istədiyinizdən əmin misiniz? [H/Y]");
+                        var t = char.Parse(Console.ReadLine());
+                        if (t == 'H')
+                        {
+                            finished = false;
+
+                        }
+                        else
+                        {
+                            finished = true;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Düzgün ədəd daxil edin!");
+                    }
+
+                }
+
+                else if (a == 3)
+                {
+                    Console.WriteLine("Siz programdan çıxmaq istədiyinizə əmin misiniz? [H/Y] ");
+                    string b;
+                    b = Convert.ToString(Console.ReadLine());
+                    if (b == "H")
+                    {
+                        System.Environment.Exit(0);
+                    }
+                    else if (b == "Y")
+                    {
+                        Console.Clear();
+
+                    }
+                }
+                else if(a>3)
+                {
+                    Console.WriteLine("Düzgün ədəd daxil edin");
+                }                          
+            } while (!finished);
+        }
+      }
+   }  
